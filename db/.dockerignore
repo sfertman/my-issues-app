@@ -1,0 +1,4 @@
+**/*
+!init_db.sh
+!./migrations/*.*sql
+!./migrations/run_migrations.sh

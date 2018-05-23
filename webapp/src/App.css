@@ -1,0 +1,106 @@
+
+div, table, tr, td {
+  border: 1px solid #777
+}
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+  font-family: monospace;
+  text-align: left;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.info {
+  font-size: 10px;
+  color: #777;
+}
+
+.tight {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.issue-row {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.issue-row:hover {
+  background: #eee
+}
+
+
+.hamburger {
+  vertical-align: middle;
+  transition: transform .15s ease-in-out;
+}
+
+.hamburger:hover {
+  transform: rotate(-90deg);
+}
+
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  /* border: 2px solid #000; */
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.grey {
+  background:#aaa;
+  border: 1px solid #999;
+}
+.grey:hover {
+  background:#ccc;
+  border: 1px solid #bbb;
+}
+
+.red {
+  background:#d00;
+  border: 1px solid #a00;
+}
+.red:hover {
+  background:#f00;
+  border: 1px solid #c00;
+}
+
+.green {
+  background:#0b0;
+  border: 1px solid #090;
+}
+.green:hover {
+  background: #0d0;
+  border: 1px solid #0b0;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
