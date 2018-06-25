@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './asset/logo.svg';
-import hbrgr from './asset/menu-button-of-three-horizontal-lines.svg'
+import hburger from './asset/menu-button-of-three-horizontal-lines.svg'
 import './App.css';
 
 
@@ -16,7 +16,13 @@ import './App.css';
 // 
 
 
-const renderIssue = (task) => {
+const renderCreateIssue = () => {
+  return <div>
+    hello
+  </div>
+}
+
+const renderExistingIssue = (task) => {
   var marker;
   if (task.isDone === undefined) {
     marker = 'bullet grey';
@@ -28,37 +34,39 @@ const renderIssue = (task) => {
 
 
   
-  return <div className='issue-row'>
-    <table width='100%'>
+  return <table key={task._id} className='issue-row' width='100%'>
+    <tbody>
       <tr>
         <td className='tight'>
           <input type='checkbox'/>
         </td>
-        <td className='title'>
+        <td className='issue-title'>
           <b>{task.title}</b>
         </td>
         <td className='tight'>
-            <div class={marker} title='status'></div>
+            <div className={marker} title='status'></div>
         </td>
         <td className='tight'>
-          <img className='hamburger' src={hbrgr} height='15px' alt='expand' title='expand'/>
+          <img className='hamburger' src={hburger} height='15px' alt='expand' title='expand'/>
         </td>
       </tr>
       <tr>
         <td></td>
         <td colSpan='3'>
           <table width='100%'>
-            <tr>
-              <td className='info' width='50%' style={{'text-align':'left'}}>#{task._id} lkmlmlk: some meta info</td>
-              <td className='info' width='50%' style={{'text-align':'right'}}>
-                Due: {task.dueDate}
-              </td>
-            </tr>
+            <tbody>  
+              <tr>
+                <td className='issue-info' width='50%' style={{textAlign:'left'}}>#{task._id} lkmlmlk: some meta info</td>
+                <td className='info' width='50%' style={{textAlign:'right'}}>
+                  Due: {task.dueDate}
+                </td>
+              </tr>
+            </tbody>
           </table>
         </td>
       </tr>
-    </table>
-  </div>
+    </tbody>
+  </table>
 }
 
 class App extends Component {
@@ -83,17 +91,27 @@ class App extends Component {
     }]
   }
 
+  createNewIssue () {
+    console.log('haha');
+  }
+
   render() {
     const { tasks } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header" style={{textAlign:'left'}}>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">My Issues</h1>
         </header>
-        <table className="App-intro" width='75%' align='center'>
-          {tasks.map((task) => renderIssue(task))}
-        </table>
+        <div style={{alignItems: 'center'}}>
+          nfnfnfn
+          <div style={{alignItems:'center'}}> 
+            <button onClick={this.createNewIssue.bind(this)} className='plus-button'>New Issue</button>
+          </div>
+          <div style={{maxWidth:'750px'}}>
+            {tasks.map((task) => renderExistingIssue(task))}
+          </div>
+        </div>
       </div>
     );
   }

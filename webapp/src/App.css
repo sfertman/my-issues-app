@@ -1,7 +1,7 @@
 
-div, table, tr, td {
+/* div, table, tbody, tr, td {
   border: 1px solid #777
-}
+} */
 
 
 
@@ -31,11 +31,12 @@ div, table, tr, td {
   text-align: left;
 }
 
-.title {
+.issue-title {
+  text-align: left;
   font-size: 16px;
 }
 
-.info {
+.issue-info {
   font-size: 10px;
   color: #777;
 }
@@ -65,6 +66,18 @@ div, table, tr, td {
   transform: rotate(-90deg);
 }
 
+.plus-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  cursor: pointer;  
+}
+
+.plus-button:hover {
+  background-color: green;
+}
 
 .bullet {
   width: 8px;
